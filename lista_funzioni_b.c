@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lista_b.c                                          :+:      :+:    :+:   */
+/*   lista_funzioni_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 10:55:26 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/16 18:10:29 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/19 10:10:14 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "pushswap.h"
 
 void	addnodeb_davanti(t_b **oi, int valore)
 {
-	t_b *tmp;
+	t_b	*tmp;
 
 	if (*oi == NULL)
 	{
@@ -32,13 +32,13 @@ void	addnodeb_davanti(t_b **oi, int valore)
 
 void	addnodeb_ultimo(t_b **oi, int valore)
 {
-	t_b *tmp;
+	t_b	*tmp;
 
 	if (*oi == NULL)
 	{
 		tmp = (t_b *)malloc(sizeof(t_a));
 		if (tmp == NULL)
-			return ;
+			exit ;
 		tmp->val = valore;
 		tmp->next = NULL;
 		*oi = tmp;
@@ -49,16 +49,16 @@ void	addnodeb_ultimo(t_b **oi, int valore)
 		tmp = tmp->next;
 	tmp->next = (t_b *)malloc(sizeof(t_b));
 	if (tmp == NULL)
-		return ;
+		exit ;
 	tmp = tmp->next;
 	tmp->val = valore;
 	tmp->next = NULL;
 }
 
-int		delete_nodeb(t_b **oi)
+int	delete_nodeb(t_b **oi)
 {
-	t_b *tmp;
-	int valore;
+	t_b	*tmp;
+	int	valore;
 
 	if (*oi == NULL)
 		return (-1);
@@ -69,10 +69,10 @@ int		delete_nodeb(t_b **oi)
 	return (valore);
 }
 
-int		delete_ultimonodeb(t_b **oi)
+int	delete_ultimonodeb(t_b **oi)
 {
 	t_b	*tmp;
-	int valore;
+	int	valore;
 
 	if (*oi == NULL)
 		return (-1);

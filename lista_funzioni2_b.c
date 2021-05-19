@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   comandi.c                                          :+:      :+:    :+:   */
+/*   lista_funzioni2_b.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/16 10:49:10 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/19 16:11:34 by dbrignon         ###   ########.fr       */
+/*   Created: 2021/05/19 09:53:22 by dbrignon          #+#    #+#             */
+/*   Updated: 2021/05/19 09:58:25 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	push_a(t_a **ciao, t_b **oi)
+void	print_lista_b(t_b **oi)
 {
-	if (*ciao == NULL)
-		return ;
-	addnodedavanti(ciao, (*oi)->val);
-	delete_nodeb(oi);
-}
+	t_b	*tmp;
 
-void	push_b(t_a **ciao, t_b **oi)
-{
-	if (*ciao == NULL)
-		return ;
-	addnodeb_davanti(oi, (*ciao)->val);
-	delete(ciao);
-}
-
-void	free_word(t_a **ciao)
-{
-	return ;
+	if (*oi == NULL)
+		printf("lista b vuota\n");
+	else
+	{
+		tmp = *oi;
+		printf("LISTA B\n");
+		printf("Puntatore inizio lista: %p\n", *oi);
+		while (tmp != NULL)
+		{
+			printf("\t%d\n", tmp->val);
+			printf("\t%p\n", tmp->next);
+			printf("\n\n");
+			tmp = tmp->next;
+		}
+	}
 }
