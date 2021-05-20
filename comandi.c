@@ -6,12 +6,12 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 10:49:10 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/19 16:11:34 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/20 13:23:32 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
+/*
 void	push_a(t_a **ciao, t_b **oi)
 {
 	if (*ciao == NULL)
@@ -27,8 +27,8 @@ void	push_b(t_a **ciao, t_b **oi)
 	addnodeb_davanti(oi, (*ciao)->val);
 	delete(ciao);
 }
-
-void	free_word(t_a **ciao)
+*/
+void	free_word(t_world *all)
 {
 	return ;
 }

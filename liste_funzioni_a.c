@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:45:42 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/19 10:08:56 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/20 13:31:01 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,24 @@ void	printlist(t_a **ciao, t_b **oi)
 	print_lista_b(oi);
 }
 
-void	addnodedavanti(t_a **ciao, int val)
+void	addnodedavanti(t_world *all, int val)
 {
-	t_a	*tmp;
+	printf("ciao\n");
+	t_a *tmp;
 
-	if (*ciao == NULL)
+	if (*all->a == NULL)
 	{
 		tmp = (t_a *)malloc(sizeof(t_a));
 		tmp->val = val;
 		tmp->next = NULL;
-		*ciao = tmp;
+		*all->a = tmp;
 		return ;
 	}
-	tmp = *ciao;
-	*ciao = malloc(sizeof(t_a));
-	(*ciao)->next = tmp;
-	(*ciao)->val = val;
+	printf("segmentation foult");
+	tmp = *all->a;
+	*all->a = malloc(sizeof(t_a));
+	(*all->a)->next = tmp;
+	(*all->a)->val = val;
 }
 
 void	addnode(t_a **ciao, int val)

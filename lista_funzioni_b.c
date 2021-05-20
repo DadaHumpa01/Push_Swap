@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 10:55:26 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/19 10:10:14 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:18:22 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	addnodeb_davanti(t_b **oi, int valore)
 	(*oi)->next = tmp;
 	(*oi)->val = valore;
 }
-
+/*
 void	addnodeb_ultimo(t_b **oi, int valore)
 {
 	t_b	*tmp;
@@ -54,7 +54,7 @@ void	addnodeb_ultimo(t_b **oi, int valore)
 	tmp->val = valore;
 	tmp->next = NULL;
 }
-
+*/
 int	delete_nodeb(t_b **oi)
 {
 	t_b	*tmp;
