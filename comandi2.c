@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lista_funzioni2_b.c                                :+:      :+:    :+:   */
+/*   comandi2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/19 09:53:22 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/21 17:33:33 by dbrignon         ###   ########.fr       */
+/*   Created: 2021/05/21 17:54:37 by dbrignon          #+#    #+#             */
+/*   Updated: 2021/05/21 18:08:45 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	print_lista_b(t_world *all)
+void	rotate_a_b(t_world *all)
 {
-	t_b	*tmp;
+	rotate_a(all);
+	rotate_b(all);
+}
 
-	if (*all->b == NULL)
-		printf("lista b vuota\n");
-	else
-	{
-		tmp = *all->b;
-		printf("LISTA B\n");
-		printf("Puntatore inizio lista: %p\n", *all->b);
-		while (tmp != NULL)
-		{
-			printf("\t%d\n", tmp->val);
-			printf("\t%p\n", tmp->next);
-			printf("\n\n");
-			tmp = tmp->next;
-		}
-	}
+void	reverse_rotate_a(t_world *all)
+{
+	int val;
+
+	val = delete(all);
+	addnode(all, val);
+}
+
+void	reverse_rotate_b(t_world *all)
+{
+	int val;
+
+	val = delete_nodeb(all);
+	addnodeb_ultimo(all, val);
+}
+
+void 	reverse_rotate_a_b(t_world *all)
+{
+	reverse_rotate_a(all);
+	reverse_rotate_b(all);
 }

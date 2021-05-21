@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/20 13:23:57 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/21 18:09:26 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,26 @@ typedef struct s_world
 	int			mosse;
 }				t_world;
 
-void	printlist(t_a **ciao, t_b **oi);
+void	printlist(t_world *all);
 void	addnodedavanti(t_world *all, int val);
-void	addnode(t_a **ciao, int val);
-int		delete(t_a **ciao);
-void	addnodeb_davanti(t_b **oi, int valore);
-void	addnodeb_ultimo(t_b **oi, int valore);
-int		delete_ultimonodeb(t_b **oi);
-int		delete_nodeb(t_b **oi);
-void	push_b(t_a **ciao, t_b **oi);
-void	push_a(t_a **ciao, t_b **oi);
-void	print_lista_a(t_a **ciao);
-void	print_lista_b(t_b **oi);
+void	addnode(t_world *all, int val);
+int		delete(t_world *all);
+void	addnodeb_davanti(t_world *all, int valore);
+void	addnodeb_ultimo(t_world *all, int valore);
+int		delete_ultimonodeb(t_world *all);
+int		delete_nodeb(t_world *all);
+void	print_lista_a(t_world *all);
+void	print_lista_b(t_world *all);
 void	free_word(t_world *all);
+int		delete_ultimo(t_world *all);
+t_a		*ricerca_valore(t_world *all, int domanda);
+void	push_b(t_world *all);
+void	push_a(t_world *all);
+void	rotate_a(t_world *all);
+void	rotate_b(t_world *all);
+void    rotate_a_b(t_world *all);
+void	reverse_rotate_a(t_world *all);
+void	reverse_rotate_b(t_world *all);
+void 	reverse_rotate_a_b(t_world *all);
 
 #	endif

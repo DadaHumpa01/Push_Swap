@@ -6,16 +6,16 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:45:42 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/20 13:31:01 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/21 17:34:41 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	printlist(t_a **ciao, t_b **oi)
+void	printlist(t_world *all)
 {
-	print_lista_a(ciao);
-	print_lista_b(oi);
+ 	print_lista_a(all);
+ 	print_lista_b(all);
 }
 
 void	addnodedavanti(t_world *all, int val)
@@ -31,26 +31,25 @@ void	addnodedavanti(t_world *all, int val)
 		*all->a = tmp;
 		return ;
 	}
-	printf("segmentation foult");
 	tmp = *all->a;
 	*all->a = malloc(sizeof(t_a));
 	(*all->a)->next = tmp;
 	(*all->a)->val = val;
 }
 
-void	addnode(t_a **ciao, int val)
+void	addnode(t_world *all, int val)
 {
 	t_a	*tmp;
 
-	if (*ciao == NULL)
+	if (*all->a == NULL)
 	{
 		tmp = (t_a *)malloc(sizeof(t_a));
 		tmp->val = val;
 		tmp->next = NULL;
-		*ciao = tmp;
+		*all->a = tmp;
 		return ;
 	}
-	tmp = *ciao;
+	tmp = *all->a;
 	while (tmp->next != NULL)
 		tmp = tmp->next;
 	tmp->next = (t_a *)malloc(sizeof(t_a));
@@ -59,16 +58,16 @@ void	addnode(t_a **ciao, int val)
 	tmp->next = NULL;
 }
 
-int	delete(t_a **ciao)
+int	delete(t_world *all)
 {
 	t_a	*tmp;
 	int	valore;
 
-	if (*ciao == NULL)
+	if (*all->a == NULL)
 		return (-1);
-	tmp = (*ciao)->next;
-	valore = (*ciao)->val;
-	free(*ciao);
-	*ciao = tmp;
+	tmp = (*all->a)->next;
+	valore = (*all->a)->val;
+	free(*all->a);
+	*all->a = tmp;
 	return (valore);
 }

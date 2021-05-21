@@ -6,48 +6,49 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:51:18 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/19 09:52:03 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/21 17:51:03 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	delete_ultimo(t_a **ciao)
+int	delete_ultimo(t_world *all)
 {
 	t_a		*tmp;
 	int		valore;
 
-	if (*ciao == NULL)
+	if (*all->a == NULL)
 		return (-1);
-	tmp = *ciao;
+	tmp = *all->a;
 	while (tmp->next->next != NULL)
 		tmp = tmp->next;
+	valore = tmp->next->val;
 	free(tmp->next);
 	tmp->next = NULL;
 	return (valore);
 }
 
-void	delete_list(t_a **ciao)
+void	delete_list(t_world *all)
 {
 	t_a	*tmp;
 
-	if (*ciao == NULL)
+	if (*all->a == NULL)
 		return ;
-	while (*ciao != NULL)
+	while (*all->a != NULL)
 	{
-		tmp = (*ciao)->next;
-		free(*ciao);
-		*ciao = tmp;
+		tmp = (*all->a)->next;
+		free(*all->a);
+		*all->a = tmp;
 	}
 }
 
-t_a	*ricerca_valore(t_a **ciao, int domanda)
+t_a	*ricerca_valore(t_world *all, int domanda)
 {
 	t_a	*tmp;
 
-	if (*ciao == NULL)
+	if (*all->a == NULL)
 		return (NULL);
-	tmp = *ciao;
+	tmp = *all->a;
 	while (tmp->next != NULL)
 	{
 		if (tmp->val == domanda)
@@ -57,17 +58,17 @@ t_a	*ricerca_valore(t_a **ciao, int domanda)
 	return (NULL);
 }
 
-void	print_lista_a(t_a **ciao)
+void	print_lista_a(t_world *all)
 {
 	t_a	*tmp;
 
-	if (*ciao == NULL)
+	if (*all->a == NULL)
 		printf("lista a vouta\n");
 	else
 	{
-		tmp = *ciao;
+		tmp = *all->a;
 		printf("LISTA A\n");
-		printf("Puntatore inizio lista: %p\n", ciao);
+		printf("Puntatore inizio lista: %p\n", all->a);
 		while (tmp != NULL)
 		{
 			printf("\t%d\n", tmp->val);
