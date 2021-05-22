@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:45:42 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 15:30:23 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 16:07:05 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,20 @@ int	delete(t_world *all)
 	free(*all->a);
 	*all->a = tmp;
 	return (valore);
+}
+
+int	dim_list_a(t_world *all)
+{
+	int	dim;
+	t_a	*tmp;
+
+	dim = 0;
+	if (*all->a == NULL)
+		return (0);
+	while (*all->a != NULL)
+	{
+		dim += 1;
+		*all->a = (*all->a)->next;
+	}
+	return (dim);
 }

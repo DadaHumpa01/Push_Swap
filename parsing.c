@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 11:39:08 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 15:56:50 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 16:19:56 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,17 @@ void	error(void)
 	exit(1);
 }
 
+void	parsing_lista(t_world *all, int val)
+{
+	int check;
+
+	check = ricerca_valore(all, val);
+	if (check == 0)
+		return ;
+	else
+		error();
+}
+
 void	check_spazzi(t_world *all, char *str)
 {
 	int	i;
@@ -26,17 +37,17 @@ void	check_spazzi(t_world *all, char *str)
 	i = 0;
 	if (str[i] != 32)
 	{	
-		val = Iatoi(&str[i]);
-		printf("Itoa valore %d: \n", val);
+		val = Iatoi(&str[i + 1]);
 		addnode(all, val);
+		parsing_lista(all, val);
 	}
 	while (str[i] != '\0')
 	{
 		if (str[i] == 32 && (str[i + 1] != 32 && str[i + 1] != '\0'))
 		{
 			val = Iatoi(&str[i + 1]);
-			printf("Itoa valore %d: \n", val);
 			addnode(all, val);
+			parsing_lista(all, val);
 		}
 		i++;
 	}

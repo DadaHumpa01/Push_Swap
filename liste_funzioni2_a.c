@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:51:18 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/22 15:46:06 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 16:14:39 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,20 @@ void	delete_list_a(t_world *all)
 	}
 }
 
-t_a	*ricerca_valore(t_world *all, int domanda)
+int	ricerca_valore(t_world *all, int domanda)
 {
 	t_a	*tmp;
 
 	if (*all->a == NULL)
-		return (NULL);
+		return (0);
 	tmp = *all->a;
 	while (tmp->next != NULL)
 	{
 		if (tmp->val == domanda)
-			return (tmp->next);
+			return (1);
 		tmp = tmp->next;
 	}
-	return (NULL);
+	return (0);
 }
 
 void	print_lista_a(t_world *all)

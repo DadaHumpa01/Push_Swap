@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 15:37:35 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 16:06:22 by dbrignon         ###   ########.fr       */
+/*   Created: 2021/05/22 16:01:45 by dbrignon          #+#    #+#             */
+/*   Updated: 2021/05/22 16:08:59 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	list_init(t_world *all)
+void    check_value_list_a(t_world *all)
 {
-	all->a = (t_a **)malloc(sizeof(t_a *));
-	if (all->a == NULL)
-		exit(1);
-	*all->a = NULL;
-	all->b = (t_b **)malloc(sizeof(t_b *));
-	if (all->b == NULL)
-		free_word(all);
-	*all->b = NULL;
-	all->mosse = 0;
-}
-
-int	main(int ac, char **av)
-{
-	t_world	all;
-
-	list_init(&all);
-	parsing(ac, av, &all);
-	print_lista_a(&all);
-	printf("Numeri all'intero della lista a: %d: ", dim_list_a(&all));
-	free_word(&all);
+    return ;
 }

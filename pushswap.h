@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 15:55:27 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 16:14:42 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	print_lista_a(t_world *all);
 void	print_lista_b(t_world *all);
 void	free_word(t_world *all);
 int		delete_ultimo(t_world *all);
-t_a		*ricerca_valore(t_world *all, int domanda);
+int		ricerca_valore(t_world *all, int domanda);
 void	swap_a(t_world *all);
 void	swap_b(t_world *all);
 void	swap_a_b(t_world *all);
@@ -67,5 +67,6 @@ void	error(void);
 void	list_init(t_world *all);
 void	delete_list_a(t_world *all);
 void	delete_list_b(t_world *all);
+int		dim_list_a(t_world *all);
 
 #	endif
