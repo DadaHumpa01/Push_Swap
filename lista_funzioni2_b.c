@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:53:22 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/21 17:33:33 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 15:49:49 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,19 @@ void	print_lista_b(t_world *all)
 			printf("\n\n");
 			tmp = tmp->next;
 		}
+	}
+}
+
+void	delete_list_b(t_world *all)
+{
+	t_b	*tmp;
+
+	if (*all->b == NULL)
+		return ;
+	while (*all->b != NULL)
+	{
+		tmp = (*all->b)->next;
+		free(*all->b);
+		*all->b = tmp;
 	}
 }

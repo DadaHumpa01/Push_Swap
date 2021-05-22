@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:51:18 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/21 17:51:03 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 15:46:06 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	delete_ultimo(t_world *all)
 	return (valore);
 }
 
-void	delete_list(t_world *all)
+void	delete_list_a(t_world *all)
 {
 	t_a	*tmp;
 

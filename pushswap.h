@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 09:38:56 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/22 15:55:27 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
 
 typedef struct s_a
 {
@@ -50,13 +52,20 @@ int		delete_ultimo(t_world *all);
 t_a		*ricerca_valore(t_world *all, int domanda);
 void	swap_a(t_world *all);
 void	swap_b(t_world *all);
+void	swap_a_b(t_world *all);
 void	push_b(t_world *all);
 void	push_a(t_world *all);
 void	rotate_a(t_world *all);
 void	rotate_b(t_world *all);
-void    rotate_a_b(t_world *all);
+void	rotate_a_b(t_world *all);
 void	reverse_rotate_a(t_world *all);
 void	reverse_rotate_b(t_world *all);
-void 	reverse_rotate_a_b(t_world *all);
+void	reverse_rotate_a_b(t_world *all);
+void	parsing(int ac, char **av, t_world *all);
+int		Iatoi(char *str);
+void	error(void);
+void	list_init(t_world *all);
+void	delete_list_a(t_world *all);
+void	delete_list_b(t_world *all);
 
 #	endif

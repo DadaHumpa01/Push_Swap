@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 10:49:10 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/21 17:51:56 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 15:51:49 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	push_b(t_world *all)
 
 void	rotate_a(t_world *all)
 {
-	int val;
+	int	val;
 
 	val = delete_ultimo(all);
 	addnodedavanti(all, val);
@@ -38,7 +38,7 @@ void	rotate_a(t_world *all)
 
 void	rotate_b(t_world *all)
 {
-	int val;
+	int	val;
 
 	val = delete_ultimonodeb(all);
 	addnodeb_davanti(all, val);
@@ -46,5 +46,10 @@ void	rotate_b(t_world *all)
 
 void	free_word(t_world *all)
 {
-	return ;
+	if (*all->a != NULL)
+		delete_list_a(all);
+	free(all->a);
+	if (*all->b != NULL)
+		delete_list_b(all);
+	free(all->b);
 }

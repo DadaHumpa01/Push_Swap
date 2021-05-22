@@ -12,7 +12,7 @@ Ristruttrazione delle liste, per uso attraverso una struttura.
 
 Creati comandi: sa sb ra rb rr rra rrb rrr
 
-Da finire il parging
+Da finire il parsing
 
 ### 22 maggio 2021
 

@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:45:42 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/21 17:34:41 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 15:30:23 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	printlist(t_world *all)
 {
- 	print_lista_a(all);
- 	print_lista_b(all);
+	print_lista_a(all);
+	print_lista_b(all);
 }
 
 void	addnodedavanti(t_world *all, int val)
 {
-	printf("ciao\n");
-	t_a *tmp;
+	t_a	*tmp;
 
 	if (*all->a == NULL)
 	{
