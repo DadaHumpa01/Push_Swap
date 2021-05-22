@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 11:39:08 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 16:19:56 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 20:54:50 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	check_spazzi(t_world *all, char *str)
 	i = 0;
 	if (str[i] != 32)
 	{	
-		val = Iatoi(&str[i + 1]);
+		val = Iatoi(&str[i]);
 		addnode(all, val);
 		parsing_lista(all, val);
 	}
@@ -45,7 +45,7 @@ void	check_spazzi(t_world *all, char *str)
 	{
 		if (str[i] == 32 && (str[i + 1] != 32 && str[i + 1] != '\0'))
 		{
-			val = Iatoi(&str[i + 1]);
+			val = Iatoi(&str[i]);
 			addnode(all, val);
 			parsing_lista(all, val);
 		}

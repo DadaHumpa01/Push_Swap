@@ -10,9 +10,16 @@ Inizio parsing dell input
 
 Ristruttrazione delle liste, per uso attraverso una struttura.
 
-Creati comandi: sa sb ra rb rr rra rrb rrr
+Creati comandi: sa sb ss ra rb rr rra rrb rrr
 
 Da finire il parsing
 
 ### 22 maggio 2021
 
+Fine parsing dell' input
+
+Normato tutto il codice per il momento di Push_Swap
+
+Controllo se ci sono elementi che corrispondono all'interno della lista
+
+Inizio algoritmo di ordinamento

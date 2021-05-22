@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   atoi_mod.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 13:54:59 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 15:37:00 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/22 20:53:59 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	Iatoi(char *str)
 	while (str[i] != '\0' && str[i] != 32)
 	{
 		if (str[i] >= 48 && str[i] <= 57)
-			val = val * 10 + (str[i] - '0');
+			val = (val * 10) + (str[i] - '0');
 		else if (str[i] != 43 && str[i] != 45)
 			error();
 		if (val >= -2147483648 && val <= 2147483648)
