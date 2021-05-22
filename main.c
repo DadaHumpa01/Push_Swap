@@ -20,11 +20,8 @@ int main(int ac, char **av)
 	list_init(&all);
 	addnodedavanti(&all, 113);
 	addnodedavanti(&all, 119);
-	addnodeb_davanti(&all, 118);
-	addnodeb_davanti(&all, 119);
-	addnodeb_davanti(&all, 120);
 	addnode(&all, 10);
 	printlist(&all);
-	reverse_rotate_a_b(&all);
+	swap_a(&all);
 	printlist(&all);
 }
