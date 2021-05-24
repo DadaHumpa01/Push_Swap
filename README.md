@@ -23,3 +23,5 @@ Normato tutto il codice per il momento di Push_Swap
 Controllo se ci sono elementi che corrispondono all'interno della lista
 
 Inizio algoritmo di ordinamento
+
+### 23 maggio 2021

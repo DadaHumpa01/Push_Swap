@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 16:14:42 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 18:07:04 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_a
 {
 	int			val;
+	int			index;
 	struct s_a	*next;
 }				t_a;
 
@@ -68,5 +69,11 @@ void	list_init(t_world *all);
 void	delete_list_a(t_world *all);
 void	delete_list_b(t_world *all);
 int		dim_list_a(t_world *all);
+
+/* 	Operazioni per definirie un Index nella lista */
+
+void	set_index(t_world *all);
+void	check_value_index(t_world *all);
+void	recursive_index(t_world *all, int indice);
 
 #	endif

@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 15:37:35 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 16:06:22 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/24 18:01:52 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ void	list_init(t_world *all)
 int	main(int ac, char **av)
 {
 	t_world	all;
+	int	indice;
 
 	list_init(&all);
 	parsing(ac, av, &all);
-	print_lista_a(&all);
-	printf("Numeri all'intero della lista a: %d: ", dim_list_a(&all));
-	free_word(&all);
+	set_index(&all);
+	printlist(&all);
+	check_value_index(&all);
+	printlist(&all);
 }
