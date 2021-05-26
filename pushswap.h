@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/24 18:07:04 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/25 22:39:50 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_world
 	t_a			**a;
 	t_b			**b;
 	int			mosse;
+	int			val_close_list;
 }				t_world;
 
 void	printlist(t_world *all);
@@ -75,5 +76,9 @@ int		dim_list_a(t_world *all);
 void	set_index(t_world *all);
 void	check_value_index(t_world *all);
 void	recursive_index(t_world *all, int indice);
-
+void	split_list_a(t_world *all);
+int		check_list_a_ultimo(t_world *all);
+void	check_value(t_world *all);
+void	move_in_b_by_index(t_world *all, t_a *tmp);
+void	new_list_recursive(t_world *all);
 #	endif

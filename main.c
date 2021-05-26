@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 15:37:35 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/24 18:01:52 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/25 21:54:06 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,8 @@ int	main(int ac, char **av)
 	set_index(&all);
 	printlist(&all);
 	check_value_index(&all);
+	printlist(&all);
+	//printf("\n Ultimo valore dello stack a = %d\n", check_list_a_ultimo(&all));
+	check_value(&all);
 	printlist(&all);
 }

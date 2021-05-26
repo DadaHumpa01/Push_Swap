@@ -1,4 +1,4 @@
 rm a.out
 clear
-gcc liste_funzioni2_a.c liste_funzioni_a.c comandi.c lista_funzioni_b.c lista_funzioni2_b.c main.c comandi2.c comandi3.c atoi_mod.c index.c parsing.c
+gcc liste_funzioni2_a.c liste_funzioni_a.c comandi.c lista_funzioni_b.c lista_funzioni2_b.c main.c comandi2.c comandi3.c atoi_mod.c index.c parsing.c split_list_b.c clean_index.c
 ./a.out
