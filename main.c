@@ -6,7 +6,7 @@
 /*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 15:37:35 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/25 21:54:06 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/26 22:00:27 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,14 @@ void	list_init(t_world *all)
 int	main(int ac, char **av)
 {
 	t_world	all;
-	int	indice;
 
 	list_init(&all);
 	parsing(ac, av, &all);
 	set_index(&all);
 	printlist(&all);
 	check_value_index(&all);
-	printlist(&all);
-	//printf("\n Ultimo valore dello stack a = %d\n", check_list_a_ultimo(&all));
 	check_value(&all);
+	printlist(&all);
+	check_pos(&all);
 	printlist(&all);
 }

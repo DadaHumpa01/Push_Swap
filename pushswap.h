@@ -6,7 +6,7 @@
 /*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/25 22:39:50 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/26 22:04:24 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,15 @@ typedef struct s_a
 {
 	int			val;
 	int			index;
+	int			dim_list;
 	struct s_a	*next;
 }				t_a;
 
 typedef struct s_b
 {
 	int			val;
+	int			pos;
+	int			pos_in_stack;
 	struct s_b	*next;
 }				t_b;
 
@@ -81,4 +84,11 @@ int		check_list_a_ultimo(t_world *all);
 void	check_value(t_world *all);
 void	move_in_b_by_index(t_world *all, t_a *tmp);
 void	new_list_recursive(t_world *all);
+void	check_pos(t_world *all);
+int		dim_list_a_recursive(t_a *tmp, int cont);
+
+/* operazione per l'ordinamento in b */
+
+void	check_pos_num_b(t_world *all, t_b *aux, int pos);
+
 #	endif

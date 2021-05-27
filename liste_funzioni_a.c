@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   liste_funzioni_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:45:42 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/24 16:54:05 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/26 21:59:24 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void	printlist(t_world *all)
 	{
 		if (tmp != NULL)
 		{
-			printf("| %-7d %d |", tmp->val, tmp->index);
+			printf("| %-7d   |", tmp->val);
 			tmp = tmp->next;
 		}
 		else
 			printf("|           |");
 		if (aux != NULL)
 		{
-			printf(" %-7d|\n", aux->val);
+			printf(" %-7d %d %d|\n", aux->val, aux->pos, aux->pos_in_stack);
 			aux = aux->next;
 		}
 		else
@@ -98,17 +98,23 @@ int	delete(t_world *all)
 
 int	dim_list_a(t_world *all)
 {
-	int	dim;
-	t_a	*tmp;
+	t_a *tmp;
+	int cont;
 
-	dim = 0;
+	cont = 0;
 	tmp = *all->a;
-	if (tmp == NULL)
-		return (0);
 	while (tmp != NULL)
 	{
-		dim += 1;
-		tmp = (tmp)->next;
+		tmp = tmp->next;
+		cont += 1;
 	}
-	return (dim);
+	return (cont);
+}
+
+int	dim_list_a_recursive(t_a *tmp, int cont)
+{
+	if (tmp->next == NULL)
+		return (cont);
+	else
+		return (cont = dim_list_a_recursive(tmp->next, cont + 1));
 }

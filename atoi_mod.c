@@ -6,7 +6,7 @@
 /*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 13:54:59 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/22 20:53:59 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/26 18:26:27 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,11 @@ int	check_segno(char *str)
 
 int	Iatoi(char *str)
 {
-	int			car;
 	int			i;
 	long int	val;
 
 	i = 0;
 	val = 0;
-	car = 0;
 	while (str[i] != '\0' && str[i] != 32)
 	{
 		if (str[i] >= 48 && str[i] <= 57)
