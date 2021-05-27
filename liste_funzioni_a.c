@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   liste_funzioni_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:45:42 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/26 21:59:24 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/27 09:26:29 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	printlist(t_world *all)
 			printf("|           |");
 		if (aux != NULL)
 		{
-			printf(" %-7d %d %d|\n", aux->val, aux->pos, aux->pos_in_stack);
+			printf(" %-7d %d %d %d|\n", aux->val, aux->pos, aux->pos_in_stack, aux->mosse);
 			aux = aux->next;
 		}
 		else
@@ -94,21 +94,6 @@ int	delete(t_world *all)
 	free(*all->a);
 	*all->a = tmp;
 	return (valore);
-}
-
-int	dim_list_a(t_world *all)
-{
-	t_a *tmp;
-	int cont;
-
-	cont = 0;
-	tmp = *all->a;
-	while (tmp != NULL)
-	{
-		tmp = tmp->next;
-		cont += 1;
-	}
-	return (cont);
 }
 
 int	dim_list_a_recursive(t_a *tmp, int cont)

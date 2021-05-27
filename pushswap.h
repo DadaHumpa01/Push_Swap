@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/26 22:04:24 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/27 17:01:56 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_b
 	int			val;
 	int			pos;
 	int			pos_in_stack;
+	int			mosse;
 	struct s_b	*next;
 }				t_b;
 
@@ -40,6 +41,10 @@ typedef struct s_world
 	t_b			**b;
 	int			mosse;
 	int			val_close_list;
+	int			ra;
+	int			rb;
+	int			rra;
+	int			rrb;
 }				t_world;
 
 void	printlist(t_world *all);
@@ -90,5 +95,13 @@ int		dim_list_a_recursive(t_a *tmp, int cont);
 /* operazione per l'ordinamento in b */
 
 void	check_pos_num_b(t_world *all, t_b *aux, int pos);
+void	calculate_mosse(t_world *all, t_b *aux);
+int		dim_list_b_recursive(t_b *aux, int cont);
+int		trova_pos_recursive(t_a *tmp, int num, int pos);
+int		trova_numero_meno_mosse(t_b *aux, int num, int mosse);
+void	assign_pos_list(t_world *all, t_b *tmp);
+void	calculate_best_option(t_world *all, int num);
+void	init_moss(t_world *all);
+void	make_me_move(t_world *all);
 
 #	endif

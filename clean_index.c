@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_index.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 21:26:37 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/26 08:13:00 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/27 17:45:02 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	new_list_recursive(t_world *all)
 	{
 		if (tmp->index >= 1)
 			push_b(all);
+		else
+			reverse_rotate_a(all);
 		return ;
 	}
 	else
