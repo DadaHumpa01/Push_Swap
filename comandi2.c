@@ -6,7 +6,7 @@
 /*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:54:37 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/26 08:02:49 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/27 20:55:28 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	reverse_rotate_a(t_world *all)
 
 	val = delete(all);
 	addnode(all, val);
+	printf("rra\n");
 }
 
 void	reverse_rotate_b(t_world *all)
@@ -32,6 +33,7 @@ void	reverse_rotate_b(t_world *all)
 
 	val = delete_nodeb(all);
 	addnodeb_ultimo(all, val);
+	printf("rrb\n");
 }
 
 void 	reverse_rotate_a_b(t_world *all)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_position_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:53:40 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/27 17:38:16 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/27 20:54:16 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ int	trova_numero_meno_mosse(t_b *aux, int num, int mosse)
 
 void	calculate_best_option(t_world *all, int num)
 {
-	t_a	*tmp;
 	t_b	*aux;
-	int	val;
+	int val;
 
-	tmp = *all->a;
+	val = 0;
+	val += 1;
 	aux = *all->b;
 	while (aux != NULL && aux->val != num)
 		aux = aux->next;
@@ -74,7 +74,7 @@ int		trova_pos_recursive(t_a *tmp, int num, int pos)
 	else
 	{
 		if (tmp->val < num && tmp->next->val > num && tmp->next != NULL)
-			return (pos);
+			return (pos + 1);
 		return (pos = trova_pos_recursive(tmp->next, num, pos +1));
 	}
 }

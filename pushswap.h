@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/27 17:01:56 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/27 21:24:50 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,6 @@ void	assign_pos_list(t_world *all, t_b *tmp);
 void	calculate_best_option(t_world *all, int num);
 void	init_moss(t_world *all);
 void	make_me_move(t_world *all);
+void	orchestratore(t_world *all);
 
 #	endif

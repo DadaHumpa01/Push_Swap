@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   comandi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 10:49:10 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/27 11:16:37 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/27 20:55:22 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	rotate_a(t_world *all)
 
 	val = delete_ultimo(all);
 	addnodedavanti(all, val);
+	printf("ra\n");
 }
 
 void	rotate_b(t_world *all)
@@ -42,6 +43,7 @@ void	rotate_b(t_world *all)
 
 	val = delete_ultimonodeb(all);
 	addnodeb_davanti(all, val);
+	printf("rb\n");
 }
 
 void	free_word(t_world *all)
