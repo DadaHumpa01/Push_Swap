@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:17:34 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/27 17:51:12 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/28 17:51:19 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ void	assign_pos_list(t_world *all, t_b *tmp)
 	aux = *all->a;
 	if (tmp->next == NULL)
 	{
-		tmp->pos = trova_pos_recursive(aux,tmp->val, 0);
-		if (tmp->pos == dim_list_a_recursive(*all->a, 0))
+		tmp->pos = trova_pos(all, tmp->val);
+		if (tmp->pos == dim_list_a_recursive(*all->a, 0) + 1)
 			tmp->pos = 0;
 		return ;
 	}
 	else
 	{	
-		tmp->pos = trova_pos_recursive(aux, tmp->val, 0);
-		if (tmp->pos == dim_list_a_recursive(*all->a, 0))
+		tmp->pos = trova_pos(all, tmp->val);
+		if (tmp->pos == dim_list_a_recursive(*all->a, 0) + 1)
 			tmp->pos = 0;
+		printf("valore tmp pos %d per il numero %d\n", tmp->pos, tmp->val);
 		assign_pos_list(all, tmp->next);
 	}
 }
@@ -73,6 +74,7 @@ void	check_minus_mosse_b(t_world *all)
 
 void	check_pos(t_world *all)
 {
+	init_moss(all);
 	assign_pos_list(all, *all->b);
 	check_pos_num_b(all, *all->b, 0);
 	check_minus_mosse_a(all);
@@ -80,6 +82,5 @@ void	check_pos(t_world *all)
 	calculate_mosse(all, *all->b);
 	assign_pos_list(all, *all->b);
 	check_pos_num_b(all, *all->b, 0);
-	init_moss(all);
 	calculate_best_option(all, trova_numero_meno_mosse(*all->b, 0, 2147483647));
 }

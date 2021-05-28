@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/27 21:24:50 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/28 17:35:33 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ typedef struct s_world
 	int			rb;
 	int			rra;
 	int			rrb;
+	int			rr;
+	int			rrr;
 }				t_world;
 
 void	printlist(t_world *all);
@@ -97,12 +99,21 @@ int		dim_list_a_recursive(t_a *tmp, int cont);
 void	check_pos_num_b(t_world *all, t_b *aux, int pos);
 void	calculate_mosse(t_world *all, t_b *aux);
 int		dim_list_b_recursive(t_b *aux, int cont);
-int		trova_pos_recursive(t_a *tmp, int num, int pos);
+int		trova_pos(t_world *all, int num);
 int		trova_numero_meno_mosse(t_b *aux, int num, int mosse);
 void	assign_pos_list(t_world *all, t_b *tmp);
 void	calculate_best_option(t_world *all, int num);
 void	init_moss(t_world *all);
 void	make_me_move(t_world *all);
 void	orchestratore(t_world *all);
+int		check_minus_element(t_world *all);
+int		check_big_element(t_world *all);
+void	orchestatore_funzioni_effettive(t_world *all);
+void	ordine_finale_lista(t_world *all);
+int		check_pos_minus_element(t_world *all, int num);
+int		check_minus_element(t_world *all);
 
 #	endif
+
+
+//145 193 541 85 460 324 22 694 918 184

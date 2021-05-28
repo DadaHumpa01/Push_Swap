@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_position_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 21:53:40 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/27 20:54:16 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/28 10:18:37 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,21 +60,9 @@ void	calculate_best_option(t_world *all, int num)
 		all->rrb = dim_list_b_recursive(*all->b, 0) - aux->pos_in_stack + 1;
 	else
 		all->rb = aux->pos_in_stack;
-	val = trova_pos_recursive(*all->a, aux->val, 0);
+	val = trova_pos(all, aux->val);
 	if (dim_list_a_recursive(*all->a, 0) - aux->pos + 1 <= aux->pos)
 			all->rra = dim_list_a_recursive(*all->a, 0) - aux->pos + 1;
 	else
 		all->ra = aux->pos;
-}
-
-int		trova_pos_recursive(t_a *tmp, int num, int pos)
-{
-	if (tmp->next == NULL)
-		return (pos);
-	else
-	{
-		if (tmp->val < num && tmp->next->val > num && tmp->next != NULL)
-			return (pos + 1);
-		return (pos = trova_pos_recursive(tmp->next, num, pos +1));
-	}
 }
