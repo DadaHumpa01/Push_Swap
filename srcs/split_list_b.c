@@ -6,7 +6,7 @@
 /*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 19:39:41 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/24 21:13:44 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/28 22:05:32 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ void	delete_element_by_list(t_world *all, int delete)
 	aux = *all->a;
 	while (tmp != NULL)
 	{
-		// if(tmp->next->next == NULL)
-		// {
-		// 	free(tmp->next);
-		// 	tmp->next = NULL;
-		// }
 		if (tmp->next->val == delete)
 		{
 			printf("%p\n", aux);
@@ -54,5 +49,3 @@ void	split_list_a(t_world *all)
 		tmp = tmp->next;
 	}
 }
-
-//72 30 97 95 -94 -73 -79 3 63 -16 11 -28 22 47 -39 -64 20 87 6  45 -82 -50 52 -66 92 6 7 -8379 -80 -7

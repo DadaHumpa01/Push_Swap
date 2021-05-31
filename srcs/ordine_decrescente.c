@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 15:57:26 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/28 17:31:45 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/28 18:17:07 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	check_position_finale(t_world *all)
 	pos_ele_pc = check_pos_minus_element(all, check_minus_element(all));
 	divisione = dim_list / 2;
 	if (pos_ele_pc > divisione + 1)
-		sistemare_la_lista_finale_rra(all, pos_ele_pc - dim_list);
+		sistemare_la_lista_finale_rra(all, pos_ele_pc - dim_list - 1);
 	else
 		sistemare_la_lista_finale(all, pos_ele_pc);
 

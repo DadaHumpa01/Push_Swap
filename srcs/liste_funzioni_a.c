@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 08:45:42 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/28 17:19:50 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/29 16:32:10 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	printlist(t_world *all)
 	{
 		if (tmp != NULL)
 		{
-			printf("| %-7d   |", tmp->val);
+			printf("| %-7d %d |", tmp->val, tmp->index);
 			tmp = tmp->next;
 		}
 		else

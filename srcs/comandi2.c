@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   comandi2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:54:37 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/28 14:34:53 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/30 19:20:57 by danilo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	rotate_a_b(t_world *all)
 	addnodedavanti(all, val);
 	val = delete_ultimonodeb(all);
 	addnodeb_davanti(all, val);
-	printf("rrr\n");
+	write(1, "rrr\n ", 4);
 }
 
 void	reverse_rotate_a(t_world *all)
@@ -29,7 +29,7 @@ void	reverse_rotate_a(t_world *all)
 
 	val = delete(all);
 	addnode(all, val);
-	printf("ra\n");
+	write(1, "ra\n ", 3);
 	all->mosse += 1;
 }
 
@@ -39,7 +39,7 @@ void	reverse_rotate_b(t_world *all)
 
 	val = delete_nodeb(all);
 	addnodeb_ultimo(all, val);
-	printf("rb\n");
+	write(1, "rb\n ", 3);
 	all->mosse += 1;
 }
 
@@ -51,5 +51,5 @@ void 	reverse_rotate_a_b(t_world *all)
 	addnode(all, val);
 	val = delete_nodeb(all);
 	addnodeb_ultimo(all, val);
-	printf("rr\n");
+	write(1, "rr\n ", 3);
 }
