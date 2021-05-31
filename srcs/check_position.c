@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_position.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 08:17:34 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/28 22:05:12 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/31 11:40:32 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	dim_list_b_recursive(t_b *aux, int cont)
 
 void	check_minus_mosse_a(t_world *all)
 {
-	t_b *aux;
+	t_b	*aux;
 
 	aux = *all->b;
 	while (aux != NULL)
@@ -51,13 +51,15 @@ void	check_minus_mosse_a(t_world *all)
 
 void	check_minus_mosse_b(t_world *all)
 {
-	t_b *aux;
+	t_b	*aux;
+	int	list_b;
 
+	list_b = dim_list_b_recursive(*all->b, 0);
 	aux = *all->b;
 	while (aux != NULL)
 	{
-		if (dim_list_b_recursive(*all->b, 0) - aux->pos_in_stack + 1 <= aux->pos_in_stack)
-			aux->pos_in_stack = dim_list_b_recursive(*all->b, 0) - aux->pos_in_stack + 1;
+		if (list_b - aux->pos_in_stack + 1 <= aux->pos_in_stack)
+			aux->pos_in_stack = list_b - aux->pos_in_stack + 1;
 		else
 			aux->pos_in_stack = aux->pos_in_stack;
 		aux = aux->next;

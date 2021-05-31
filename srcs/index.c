@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:53:46 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/29 16:52:50 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/05/31 11:51:14 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	recursive_index(t_world *all, int indice)
 		while (tmp != NULL)
 		{
 			if (tmp->index == ((indice * -1) - 1))
-				break;
+				break ;
 			if (tmp->index == indice)
 				savenum = tmp->val;
 			tmp = tmp->next;
@@ -57,7 +57,7 @@ int	set_index_by_num(t_world *all, int val, int index)
 	while (tmp != NULL)
 	{
 		if (tmp->val == val)
-			break;
+			break ;
 		if (tmp->index > indice)
 			indice = tmp->index;
 		tmp = tmp->next;
@@ -89,7 +89,7 @@ void	check_value_index(t_world *all)
 
 void	set_index(t_world *all)
 {
-	t_a *tmp;
+	t_a	*tmp;
 
 	tmp = *all->a;
 	while (tmp != NULL)

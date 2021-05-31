@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 15:37:35 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/31 09:22:46 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/31 16:09:34 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ void	sotto_sequenza(t_world *all)
 		check_pos(all);
 		orchestatore_funzioni_effettive(all);
 	}
-	ordine_finale_lista(all);
+	check_position_finale(all);
 }
 
 void	due_argomenti(t_world *all)
 {
-	t_a *tmp;
+	t_a	*tmp;
 
 	tmp = *all->a;
 	if (tmp->val > tmp->next->val)
@@ -52,15 +52,13 @@ void	tre_argomenti(t_world *all)
 	set_index(all);
 	check_value_index(all);
 	check_ott(all);
-	printlist(all);
 	order_3_number(all);
-	printlist(all);
 }
 
 int	main(int ac, char **av)
 {
 	t_world	all;
-	int dim;
+	int		dim;
 
 	list_init(&all);
 	parsing(ac, av, &all);
@@ -76,6 +74,6 @@ int	main(int ac, char **av)
 	else if (dim == 1)
 		due_argomenti(&all);
 	else if (dim == 0)
-		free_word(&all);
+		exit (1);
 	free_word(&all);
 }

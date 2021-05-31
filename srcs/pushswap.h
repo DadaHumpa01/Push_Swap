@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/31 09:20:09 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/31 12:11:38 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ typedef struct s_world
 	int			rrr;
 }				t_world;
 
-void	printlist(t_world *all);
 void	addnodedavanti(t_world *all, int val);
 void	addnode(t_world *all, int val);
 int		delete(t_world *all);
@@ -103,21 +102,11 @@ void	orchestratore(t_world *all);
 int		check_minus_element(t_world *all);
 int		check_big_element(t_world *all);
 void	orchestatore_funzioni_effettive(t_world *all);
-void	ordine_finale_lista(t_world *all);
+void	check_position_finale(t_world *all);
 int		check_pos_minus_element(t_world *all, int num);
 int		check_minus_element(t_world *all);
 void	check_ott(t_world *all);
-
-/* 3 number */
-
 void	order_3_number(t_world *all);
-
+int		numero_mag_in_sott(t_world *all);
 
 #	endif
-
-
-//145 193 541 85 460 324 22 694 918 184
-
-//72 30 97 95 -94 -73 -79 3 63 -16 11 -28 22 47 -39 -64 20 87 6  45 -82 -50 52 -66 92 6 7 -8379 -80 -7
-
-//434 612 889 978 61 877 717 795 87 613

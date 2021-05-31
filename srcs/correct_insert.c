@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   correct_insert.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 21:09:19 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/28 22:03:16 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/31 11:50:31 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	check_pos_big_element(t_world *all, int num)
 {
-	t_a *tmp;
+	t_a	*tmp;
 	int	cont;
 
 	cont = 0;
@@ -31,7 +31,7 @@ int	check_pos_big_element(t_world *all, int num)
 
 int	check_pos_minus_element(t_world *all, int num)
 {
-	t_a *tmp;
+	t_a	*tmp;
 	int	cont;
 
 	cont = 0;
@@ -48,8 +48,8 @@ int	check_pos_minus_element(t_world *all, int num)
 
 int	check_big_element(t_world *all)
 {
-	t_a *tmp;
-	int magiore;
+	t_a	*tmp;
+	int	magiore;
 
 	tmp = *all->a;
 	while (tmp != NULL)
@@ -63,8 +63,8 @@ int	check_big_element(t_world *all)
 
 int	check_minus_element(t_world *all)
 {
-	t_a *tmp;
-	int minore;
+	t_a	*tmp;
+	int	minore;
 
 	tmp = *all->a;
 	minore = tmp->val;

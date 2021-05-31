@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   3_number.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 09:18:32 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/31 09:36:01 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/31 17:36:59 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	order_3_number(t_world *all)
 {
-	t_a  *tmp;
-	
+	t_a	*tmp;
+
 	tmp = *all->a;
-	if (tmp->next->next->index == -3)
-		printf("non devo fare nulla\n");
+	if (tmp->index == -1 && tmp->next->index == -2 && tmp->next->next->index == -3)
+		return ;
 	else if (tmp->index == 1 && tmp->next->index >= -1)
 		swap_a(all);
 	else if (tmp->index == -1 && tmp->next->next->index == -1)
@@ -35,4 +35,26 @@ void	order_3_number(t_world *all)
 	}
 	else if (tmp->index == -1 && tmp->next->index == -2)
 		rotate_a(all);
+}
+
+void	check_ott(t_world *all)
+{
+	t_a	*tmp;
+	int	minus;
+	int	val;
+
+	val = numero_mag_in_sott(all);
+	minus = 0;
+	tmp = *all->a;
+	while (tmp != NULL)
+	{
+		if (tmp->index < 0)
+			minus = 1;
+		if (tmp->val > val && minus == 0)
+		{
+			tmp->index = -1;
+			val = tmp->val;
+		}
+		tmp = tmp->next;
+	}
 }

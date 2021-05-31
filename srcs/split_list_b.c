@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split_list_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 19:39:41 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/28 22:05:32 by danilo           ###   ########.fr       */
+/*   Updated: 2021/05/31 11:56:48 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	delete_element_by_list(t_world *all, int delete)
 {
-	t_a *tmp;
-	t_a *aux;
+	t_a	*tmp;
+	t_a	*aux;
 
 	tmp = *all->a;
 	aux = *all->a;
