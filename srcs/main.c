@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 15:37:35 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/31 16:09:34 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:25:03 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	list_init(t_world *all)
 	if (all->b == NULL)
 		free_word(all);
 	*all->b = NULL;
-	all->mosse = 0;
 }
 
 void	sotto_sequenza(t_world *all)
@@ -66,9 +65,9 @@ int	main(int ac, char **av)
 	if (dim >= 5)
 		sotto_sequenza(&all);
 	else if (dim == 4)
-		printf("ho 5 argomenti\n");
+		five_number_order(&all);
 	else if (dim == 3)
-		printf("ho 4 argomenti\n");
+		quattro_num(&all);
 	else if (dim == 2)
 		tre_argomenti(&all);
 	else if (dim == 1)

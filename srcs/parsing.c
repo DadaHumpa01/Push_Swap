@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 11:39:08 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/24 09:49:40 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/06/07 16:08:59 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error(void)
 {
-	printf("Error\n");
+	write(1, "Error\n", 6);
 	exit(1);
 }
 
@@ -92,5 +92,5 @@ void 	parsing(int ac, char **av, t_world *all)
 		}
 	}
 	else
-		error();
+		exit(1);
 }

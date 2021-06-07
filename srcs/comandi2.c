@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   comandi2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danilo <danilo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:54:37 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/30 19:20:57 by danilo           ###   ########.fr       */
+/*   Updated: 2021/06/07 15:05:30 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	reverse_rotate_a(t_world *all)
 	val = delete(all);
 	addnode(all, val);
 	write(1, "ra\n ", 3);
-	all->mosse += 1;
 }
 
 void	reverse_rotate_b(t_world *all)
@@ -40,7 +39,6 @@ void	reverse_rotate_b(t_world *all)
 	val = delete_nodeb(all);
 	addnodeb_ultimo(all, val);
 	write(1, "rb\n ", 3);
-	all->mosse += 1;
 }
 
 void 	reverse_rotate_a_b(t_world *all)

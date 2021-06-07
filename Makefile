@@ -16,8 +16,9 @@ SRCS =	./srcs/liste_funzioni2_a.c \
 		./srcs/make_mosse.c \
 		./srcs/correct_insert.c \
 		./srcs/ordine_decrescente.c \
-		./srcs/3_number.c
-
+		./srcs/3_number.c \
+		./srcs/5_number.c \
+		./srcs/4_number.c
 DIR = ./srcs/
 
 NAME = pushswap

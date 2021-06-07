@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 09:18:32 by danilo            #+#    #+#             */
-/*   Updated: 2021/05/31 17:36:59 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:26:19 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	order_3_number(t_world *all)
 	t_a	*tmp;
 
 	tmp = *all->a;
-	if (tmp->index == -1 && tmp->next->index == -2 && tmp->next->next->index == -3)
+	if (tmp->index == -1 && tmp->next->index == -2
+		&& tmp->next->next->index == -3)
 		return ;
 	else if (tmp->index == 1 && tmp->next->index >= -1)
 		swap_a(all);

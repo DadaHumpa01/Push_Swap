@@ -6,7 +6,7 @@
 /*   By: dbrignon <dbrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:31:15 by dbrignon          #+#    #+#             */
-/*   Updated: 2021/05/31 12:11:38 by dbrignon         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:24:42 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ typedef struct s_world
 {
 	t_a			**a;
 	t_b			**b;
-	int			mosse;
 	int			val_close_list;
 	int			ra;
 	int			rb;
@@ -78,7 +77,6 @@ void	error(void);
 void	list_init(t_world *all);
 void	delete_list_a(t_world *all);
 void	delete_list_b(t_world *all);
-int		dim_list_a(t_world *all);
 void	set_index(t_world *all);
 void	check_value_index(t_world *all);
 void	recursive_index(t_world *all, int indice);
@@ -108,5 +106,9 @@ int		check_minus_element(t_world *all);
 void	check_ott(t_world *all);
 void	order_3_number(t_world *all);
 int		numero_mag_in_sott(t_world *all);
+void	five_number_order(t_world *all);
+void	tre_argomenti(t_world *all);
+int		dim_list_a(t_world *all);
+void	quattro_num(t_world *all);
 
 #	endif
