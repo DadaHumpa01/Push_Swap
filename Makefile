@@ -21,7 +21,7 @@ SRCS =	./srcs/liste_funzioni2_a.c \
 		./srcs/4_number.c
 DIR = ./srcs/
 
-NAME = pushswap
+NAME = push_swap
 
 CC = gcc
 
